@@ -41,7 +41,7 @@ const Page = async (context: { params: { page?: string, catagories?: string } })
     const data: any = await datafetch(pageNumber, pageSize.toString(), nameofpage);
     let departments: Department[] = data.finddata;
 
-    const maxContentLength: number = 605;
+    const maxContentLength: number = 205;
     return (
         <div>
             {departments.length > 0 ?
