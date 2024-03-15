@@ -71,11 +71,11 @@ const Page = async (context: { params: { page?: string, catagories?: string } })
                                             </div>
                                             <div className="col-5 col-lg-4 picturepart">
                                                 <Image
-                                                    className='img-fluid picture'
+                                                    className='picture'
                                                     src={edudata.picture}
                                                     alt=""
-                                                    width={100}
-                                                    height={100}
+                                                    width={1000}
+                                                    height={1000}
                                                 />
                                             </div>
                                         </div>
