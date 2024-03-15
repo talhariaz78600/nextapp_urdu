@@ -36,8 +36,25 @@ const Page = async (context: { params: { page?: string, catagories?: string } })
     const pageNumber = page || '1';
     const nameofpage: string = catagories || "education"
     const pageSize: number = 1;
-
-
+    let titlepage:string=""
+    if(nameofpage==="education"){
+        titlepage="تعلیم و تربیت"
+    }
+    else if(nameofpage==="food"){
+        titlepage="خوراک"
+    }
+    else if(nameofpage==="trade"){
+        titlepage="تجارت"
+    }else if(nameofpage==="department"){
+        titlepage="معلومات پاکستانی شعبہ جات"
+    }
+    else if(nameofpage==="love"){
+        titlepage="پیغام محبت سیریز"
+    }else if(nameofpage==="solutions"){
+        titlepage="مسائل کا حل"
+    }else{
+        titlepage="اخلاقیات"
+    }
     const data: any = await datafetch(pageNumber, pageSize.toString(), nameofpage);
     let departments: Department[] = data.finddata;
 
@@ -49,7 +66,7 @@ const Page = async (context: { params: { page?: string, catagories?: string } })
                     <div className="container-fluid page">
                         <div className="row">
                             <div className="col-md-12 mt-4 border-top border-primary border-4 mb-3 bg-light">
-                                <h2 className="heading">معلومات پاکستانی شعبہ جات</h2>
+                                <h2 className="heading">{titlepage}</h2>
                             </div>
                         </div>
 
