@@ -10,10 +10,11 @@ const datafetch: DataFetchFunction = async (i: string, l: string, n: string) => 
         const response = await fetch(`https://usmanurdu.vercel.app/api/${n}/get${n}data?page=${i}&limit=${l}`, {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json',
-                'topic': n,
+              'Content-Type': 'application/json',
+              'topic': n,
             },
-        });
+            cache: "no-store"
+          });
 
         const data = await response.json();
         return data;

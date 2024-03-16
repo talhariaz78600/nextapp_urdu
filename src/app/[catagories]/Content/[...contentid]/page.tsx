@@ -7,7 +7,8 @@ const singleeducationdata = async (id: string, ty: string) => {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
-            }
+            },
+            cache: "no-store" 
         })
         const res = await response.json();
         return res.finddata;
@@ -40,7 +41,7 @@ async function Content(context: { params: { contentid?: string, catagories?: str
                             day: 'numeric',
                             year: 'numeric',
                         }).format(dateFromMongoDB)}</small>
-                        <div className='mt-4' dangerouslySetInnerHTML={{ __html: d.content }}></div>
+                        <div className='mt-4 content' style={{lineHeight:"2.5"}} dangerouslySetInnerHTML={{ __html: d.content }}></div>
                     </div>
                 </div>
             </div> : <Custom404/>}
