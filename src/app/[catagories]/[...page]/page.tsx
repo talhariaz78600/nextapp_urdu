@@ -36,7 +36,7 @@ const Page = async (context: { params: { page?: string, catagories?: string } })
     const { page, catagories } = context.params;
     const pageNumber = page || '1';
     const nameofpage: string = catagories || "education"
-    const pageSize: number = 1;
+    const pageSize: number = 3;
     let titlepage:string=""
     if(nameofpage==="education"){
         titlepage="تعلیم و تربیت"

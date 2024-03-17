@@ -17,7 +17,7 @@ const Pagination: React.FC<PaginationProps> = ({ stoped, pagelenght, pageno, pag
   let pageSize = pagelenght
   let num = pageno;
   useEffect(() => {
-    let div: number = stoped / pageSize;
+    let div: number = Math.floor(stoped / pageSize);
     let rem: number = stoped % pageSize;
     if (rem !== 0) {
       setBack(div + 1)
