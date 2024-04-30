@@ -18,7 +18,7 @@ const includedLanguages = languages.map(lang => lang.value).join(",");
 function googleTranslateElementInit() {
   new (window as any).google.translate.TranslateElement(
     {
-      pageLanguage: "ur", // Set default language to Urdu ('ur')
+      pageLanguage: "ur",
       includedLanguages
     },
     "google_translate_element"
@@ -29,7 +29,6 @@ export function GoogleTranslate({ prefLangCookie }: { prefLangCookie?: string })
   const [langCookie, setLangCookie] = useState<string>(decodeURIComponent(prefLangCookie || "ur"));
 
   useEffect(() => {
-    document.body.style.textAlign = 'right';
     (window as any).googleTranslateElementInit = googleTranslateElementInit;
   }, []);
 
@@ -41,11 +40,11 @@ export function GoogleTranslate({ prefLangCookie }: { prefLangCookie?: string })
     if (element) {
       element.value = value;
       element.dispatchEvent(new Event("change"));
-    }
-    if (value === 'en') {
-      document.body.style.textAlign = 'left';
-    } else {
-      document.body.style.textAlign = 'right';
+      if (value === 'en') {
+        document.body.style.textAlign = 'left';
+      } else {
+        document.body.style.textAlign = 'right';
+      }
     }
   };
 
