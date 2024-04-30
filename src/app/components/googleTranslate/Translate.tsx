@@ -7,10 +7,11 @@ interface Language {
 }
 
 const languages: Language[] = [
-  { label: 'Urdu', value: 'ur' },
+  { label: 'Select Language', value: '' },
   { label: 'English', value: 'en' },
   { label: 'Arabic', value: 'ar' },
   { label: 'Pashto', value: 'ps' },
+  { label: 'Urdu', value: 'ur' }
 ];
 
 const includedLanguages = languages.map(lang => lang.value).join(",");
@@ -34,6 +35,7 @@ export function GoogleTranslate({ prefLangCookie }: { prefLangCookie?: string })
 
   const onChange = (value: string) => {
     const lang = "/" + value;
+    if(value!=""){
     setLangCookie(lang);
     // Dispatch change event to Google Translate widget
     const element = document.querySelector(".goog-te-combo") as HTMLSelectElement;
@@ -45,8 +47,8 @@ export function GoogleTranslate({ prefLangCookie }: { prefLangCookie?: string })
       } else {
         document.body.style.textAlign = 'right';
       }
-    }
-  };
+    }}
+    };
 
   return (
     <div>

@@ -7,8 +7,12 @@ body {
   text-align: right;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 2.5;
+  line-height: 2;
   scroll-behavior: smooth;
+  
+}
+.unselectable-text {
+  user-select: none;
 }
 
 code {

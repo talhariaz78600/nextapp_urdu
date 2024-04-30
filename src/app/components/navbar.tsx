@@ -12,10 +12,10 @@ function Navbar() {
                     </Link>
                     <span className="float-left navbar-toggler" data-bs-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarNav" data-bs-target="#navbarNav"><i className="fa-sharp fa-solid fa-bars mt-2 text-white" style={{ fontSize: "32px" }}></i></span>
 
-                    <div className="collapse navbar-collapse m-0" id="navbarNav">
-                        <ul className="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                    <div className="collapse navbar-collapse m-0 fs-6" id="navbarNav">
+                        <ul className="navbar-nav d-flex justify-content-center ms-auto me-lg-5">
                             <li className="nav-item order-lg-last">
-                                <Link className="nav-link active text-end text-white" href="/"> صفحہ اول</Link>
+                                <Link className="nav-link active text-end text-white .unselectable-text" href="/"> صفحہ اول</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link  text-end text-white" href={`/education/${1}`}>تعلیم و تربیت</Link>
