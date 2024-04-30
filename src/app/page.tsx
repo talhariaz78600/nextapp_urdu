@@ -1,3 +1,4 @@
+// import { GoogleTranslate } from "./components/googleTranslate/Translate";
 import Image from "next/image";
 import Link from "next/link";
 const singleeducationdata = async () => {
@@ -18,7 +19,7 @@ interface EducationData {
     title: string;
     content: string;
     picture: string;
-    topic:string;
+    topic: string;
   }[]
 }
 export default async function Home() {
@@ -30,11 +31,12 @@ export default async function Home() {
   const data: EducationData[] = await singleeducationdata();
   return (
     <main>
+      
       {data.map((con, index) => (
         <div key={index}>
-        {con.finddata.length>0?<div className="col-md-12 mt-4 border-top border-primary border-4 mb-3 bg-light pb-1">
-            <h2 className="heading">{con.datatype}</h2>
-          </div>:""}
+          {con.finddata.length > 0 ? <div className="col-md-12 mt-4 border-top border-primary border-4 mb-3 bg-light pb-1">
+            <h2 className="heading px-2">{con.datatype}</h2>
+          </div> : ""}
           <div>
             {con.finddata.map((d, index) => {
               const isFirstElement = index === 0;
@@ -44,14 +46,14 @@ export default async function Home() {
                     <div className="row m-0">
                       <div className={`${isFirstElement ? 'col-12 col-md-8 order-md-1 order-2' : 'col-7 col-lg-8'}`}>
                         <div className="content">
-                        <Link href={`/${d.topic}/Content/${d._id}`}>
-                          <h4 className="text-primary subheading" style={{ cursor: 'pointer' }}>
-                            {d.title}
-                          </h4>
-                        </Link>
+                          <Link href={`/${d.topic}/Content/${d._id}`}>
+                            <h4 className="text-primary subheading" style={{ cursor: 'pointer' }}>
+                              {d.title}
+                            </h4>
+                          </Link>
                           <div
                             className={`${isFirstElement ? 'homepara' : 'paragraph'}`}
-                            style={{lineHeight:"2.5"}}
+                            style={{ lineHeight: "2.5" }}
                             dangerouslySetInnerHTML={{
                               __html: trimContent(d.content),
                             }}
@@ -59,7 +61,17 @@ export default async function Home() {
                         </div>
                       </div>
                       <div className={`${isFirstElement ? 'col-12 col-md-4 order-md-2 order-1' : 'col-5 col-lg-4 picturepart'}`}>
-                        <Image height={1000} width={1000} className={`img-fluid ${isFirstElement ? 'pic w-100' : 'picture'}`} src={d.picture} alt="" />
+                        {d.picture ? (
+                          <Image
+                            height={1000}
+                            width={1000}
+                            className={`img-fluid ${isFirstElement ? 'pic w-100' : 'picture'}`}
+                            src={d.picture}
+                            alt=""
+                          />
+                        ) : (
+                          <div>Loading...</div>
+                        )}
                       </div>
                     </div>
                   </div>

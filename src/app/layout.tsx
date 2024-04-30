@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
+import { GoogleTranslate } from "./components/googleTranslate/Translate";
 import "./globals.css"
 import 'bootstrap/dist/css/bootstrap.css'
 import Navbar from "./components/navbar";
@@ -18,7 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html>
-      <body style={{fontFamily:"Noto Nastaliq Urdu", textAlign:"right"}}>
+      <body style={{fontFamily:"Noto Nastaliq Urdu", textAlign:"right" }}>
+      <GoogleTranslate/>
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap"
           rel="stylesheet"
@@ -28,6 +31,11 @@ export default function RootLayout({
         {children}
         <Footer/>
         <script src="https://kit.fontawesome.com/94794741f1.js" ></script>
+        <Script
+                id="google-translate-script"
+                // strategy="afterInteractive" // Load after interactive content
+                src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+            />
       </body>
     </html>
   );

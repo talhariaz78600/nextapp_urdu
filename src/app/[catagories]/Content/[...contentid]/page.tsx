@@ -27,10 +27,7 @@ async function Content(context: { params: { contentid?: string, catagories?: str
         <div>
             {d && d._id? <div className="container-fluid">
                 <div className="row">
-                    <div className='col-md-1'>
-
-                    </div>
-                    <div className="col-md-11 mt-5">
+                    <div className="col-md-12 mt-5">
                         <div className='mb-5' style={{ height: "300px", width: "100%" }}>
                             <Image className='photo' width={100} height={100} src={d.picture} alt="" />
                         </div>
