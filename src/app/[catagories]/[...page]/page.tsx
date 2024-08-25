@@ -15,7 +15,7 @@ export async function generateMetadata(context: { params: { page?: string, catag
     let description = '';
   
     // Website name to append to each title
-    const websiteName = ' | YourWebsiteName';
+    const websiteName = ' | haltak';
 
     if (nameofpage === 'education') {
         titlepage = 'تعلیم و تربیت';
@@ -108,9 +108,7 @@ const Page = async (context: { params: { page?: string, catagories?: string } })
     const maxContentLength: number = 205;
     return (
         <div>
-            <Head>
-                <title>title</title>
-            </Head>
+            
             {departments.length > 0 ?
                 <div>
                     <div className="container-fluid page">
