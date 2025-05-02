@@ -5,14 +5,11 @@ import { GoogleTranslate } from "./components/googleTranslate/Translate";
 import "./globals.css"
 import 'bootstrap/dist/css/bootstrap.css'
 import Navbar from "./components/navbar";
-// const inter = Inter({ subsets: ["latin"] });
-import styles from "./page.module.css";
 import Footer from "./components/footer";
 export const metadata: Metadata = {
   title: "Haltak - Ultimate Urdu Content Hub for Education, Ethics, Business, Food, and More",
   description: "Explore a diverse range of Urdu content on Haltak, featuring in-depth articles on تعلیم و تربیت (Education and Training), اخلاقیات (Ethics), تجارت (Business), خوراک (Food), معلومات پاکستانی شعبہ جات (Information on Pakistani Sectors), and مسائل کا حل (Problem Solving). Stay informed and engaged with content crafted for the Urdu-speaking community.",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{

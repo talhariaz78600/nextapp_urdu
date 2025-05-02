@@ -415,20 +415,20 @@ code {
 }
 
 /* Custom CSS for the form */
-.form-label-urdu {
-  direction: rtl;
-  text-align: right;
-}
+  .form-label-urdu {
+    direction: rtl;
+    text-align: right;
+  }
 
-.form-control-urdu {
-  direction: rtl;
-  text-align: right;
-  font-family: 'Noto Nastaliq Urdu';
-}
-body {
-  position: static;
-  top: 0px !important;
-}
+  .form-control-urdu {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Noto Nastaliq Urdu';
+  }
+  body {
+    position: static;
+    top: 0px !important;
+  }
 iframe.skiptranslate {
   display: none !important;
 }

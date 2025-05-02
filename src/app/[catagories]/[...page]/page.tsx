@@ -5,7 +5,7 @@ import Pagination from '@/app/components/pagination';
 import Custom404 from '@/app/components/notfound';
 import Head from 'next/head'
 import Link from 'next/link';
-// page.tsx (or any other file you are working on)
+
 import { Metadata } from 'next';
 
 export async function generateMetadata(context: { params: { page?: string, catagories?: string } }): Promise<Metadata> {

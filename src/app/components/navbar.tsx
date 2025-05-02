@@ -1,5 +1,6 @@
 "use client"
 import Link from 'next/link';
+import { Analytics } from "@vercel/analytics/react"
 import useBootstrap from './useBootstrap';
 function Navbar() {
     useBootstrap();
@@ -7,7 +8,7 @@ function Navbar() {
         <div>
             <nav className="navbar navbar-expand-lg border" style={{ background: "#004e98" }} >
                 <div className="container-fluid" style={{ background: "#004e98" }}>
-                    <Link className="navbar-brand navbar-logo text-white urdu-text" style={{fontFamily:"Noto Nastaliq Urdu"}} href="/">
+                    <Link className="navbar-brand navbar-logo text-white urdu-text" style={{ fontFamily: "Noto Nastaliq Urdu" }} href="/">
                         حل تک
                     </Link>
                     <span className="float-left navbar-toggler" data-bs-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarNav" data-bs-target="#navbarNav"><i className="fa-sharp fa-solid fa-bars mt-2 text-white" style={{ fontSize: "32px" }}></i></span>
@@ -40,10 +41,10 @@ function Navbar() {
                             </li>
                         </ul>
 
-
                     </div>
                 </div>
             </nav>
+            <Analytics />
         </div>
 
     )
